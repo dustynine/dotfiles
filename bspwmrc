@@ -1,9 +1,8 @@
 #! /bin/sh
 
-sxhkd &
 exec setxkbmap -layout us,ru -option grp:lalt_lshift_toggle &
-exec ~/lemonconf.sh | lemonbar -b -f 'Perfect DOS VGA 437' &
-exec feh --no-xinerama --bg-center ~/Config/dust.jpg &
+exec ~/panelconf.sh | lemonbar -b -f -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1 &
+exec feh --no-xinerama --bg-center ~/configs/dust.jpg &
 #colors: tty1 font color: ADADAD, eroute-green: 798b00
 
 bspc config bottom_padding       16
@@ -19,9 +18,6 @@ bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V 
 
 #bspc rule -a Gimp desktop=^8 state=floating follow=on
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
