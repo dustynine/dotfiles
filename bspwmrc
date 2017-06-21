@@ -1,16 +1,25 @@
 #! /bin/sh
 
+#exec seafile-applet &
 exec setxkbmap -layout us,ru -option grp:lalt_lshift_toggle &
-exec ~/panelconf.sh | lemonbar -b -f -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1 &
-exec feh --no-xinerama --bg-center ~/configs/dust.jpg &
-#colors: tty1 font color: ADADAD, eroute-green: 798b00
+#exec ~/panelconf.sh | lemonbar -b -f -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1 &
+exec tint2 &
+exec feh --no-xinerama --bg-center ~/configs/forest.jpg &
+exec xflux -l 54.972986 -g 73.393411 &
 
 bspc config bottom_padding       16
 bspc config border_width         2
 bspc config window_gap           5
-bspc config normal_border_color  "#2b1a0a" 
+bspc config normal_border_color  "#16130f" 
 #2b1a0a 583718 7c4b20
-bspc config focused_border_color "#7c4b20"
+bspc config focused_border_color "#57826d"
+
+bspc config focus_follows_pointer true
+bspc config pointer_modifier mod4
+#bspc config pointer_action1 focus
+bspc config pointer_action1 move
+bspc config pointer_action2 none
+bspc config pointer_action3 resize_corner
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -18,6 +27,17 @@ bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
 
-bspc monitor -d I II III IV V 
+bspc monitor -d I II III IV V VI
 
-#bspc rule -a Gimp desktop=^8 state=floating follow=on
+bspc rule -a Chromium desktop=^1
+bspc rule -a krita desktop=^2
+bspc rule -a Seafile desktop=^6
+
+bspc desktop ^1 -l monocle
+bspc desktop ^2 -l monocle
+#bspc desktop ^3 -l monocle
+
+exec /home/mage/bin/bloodshoteyes -w 50 -r 10 --very-patient &
+exec termite -e ./notes & bspc node -t floating
+
+wmname LG3D
