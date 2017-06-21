@@ -1,3 +1,5 @@
+# ~/.profile
+
 XDG_CONFIG_HOME="$HOME/.config" 
 LD_LIBRARY_PATH=$HOME/.oldlibs
 export XDG_CONFIG_HOME
